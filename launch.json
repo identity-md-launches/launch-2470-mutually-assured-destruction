@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "MADToken",
+    "name": "Mutually Assured Destruction",
+    "symbol": "MAD",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0xa0df17b5ac76ababa36e1450e2cbcd18a620c845",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 7500,
+    "initialMarketCapWei": "3000000000000000000000000",
+    "remainderTo": "0x433c89e346976a3686cc237fcfe14d4eb84c831d"
+  },
+  "notes": "MADToken (src/MADToken.sol) is a fixed-supply OpenZeppelin v5.1.0 ERC20 named Mutually Assured Destruction, symbol MAD, 18 decimals. Its constructor takes no arguments and makes no external calls; it mints 1,000,000,000 * 10^18 = 1000000000000000000000000000 base units once to msg.sender, so under the factory deployment the factory holds the whole supply. INITIAL_SUPPLY is a constant and there is no mint, burn, owner, pause, blacklist, freeze, upgrade or other administrative entry point; the supply can never grow after launch. There are no transfer overrides: no fees, taxes, rebases or exemption lists, so the swarm share, the pool seed and the requester remainder all move whole, and ordinary buys and sells through the PoolManager work without exemption. The constructor declares no arguments, so token.constructorArgs is empty; none of $factory, $poolManager or $launchNumber is needed, as the token grants no address special treatment. No application contracts are part of the accepted tree, so contracts is empty and no initialization call is made. The pool pairs MAD with FWA at 0xa0df17b5ac76ababa36e1450e2cbcd18a620c845 with the launch policy's 1.25% fee (12500) and tick spacing 60; pool.initialPrice is provenance only, and the deployer derives the real opening price from economics.initialMarketCapWei, the supply and the token address. 10% of supply is taken by the factory for the swarm and is not stated here; 75% seeds the single-sided pool at a 3,000,000 FWA cap for the whole supply and the remaining 15% goes to 0x433c89e346976a3686cc237fcfe14d4eb84c831d."
+}
